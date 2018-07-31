@@ -30,7 +30,7 @@ Content-Type: text/plain; charset=utf-8
 1. `make docker_run`
 
 ```
-curl -iX GET $(docker-machine ip default):4200/health
+curl -iX GET localhost:4200/health
 HTTP/1.1 200 OK
 Goapi-Version: 1.0
 Date: Wed, 13 Apr 2016 14:31:51 GMT
