@@ -1,5 +1,14 @@
+FROM golang:1.10
+
+WORKDIR /go/src/github.com/kidanekal/goapi
+ADD ./ ./
+RUN make clean && make build
+
+
 FROM scratch
-ADD goapi goapi
+
+WORKDIR /
+COPY --from=0 /go/src/github.com/kidanekal/goapi/bin/goapi /goapi
 ENV PORT 4200
 EXPOSE 4200
-ENTRYPOINT ["/goapi"]
+CMD ["/goapi"]

@@ -1,0 +1,146 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "UAYb9fssuUTEJ9DXrYXfu99KfWg=",
+			"comment": "v2.3-50-g57a084d",
+			"path": "github.com/inconshreveable/log15",
+			"revision": "57a084d014d4150152b19e4e531399a7145d1540"
+		},
+		{
+			"checksumSHA1": "qBVUY73a7rVYkWvEk/XsKJAW7EI=",
+			"comment": "v2.3-50-g57a084d",
+			"path": "github.com/inconshreveable/log15/stack",
+			"revision": "57a084d014d4150152b19e4e531399a7145d1540"
+		},
+		{
+			"checksumSHA1": "+DoNU32Waxbh5mutlbxkdU68Y7I=",
+			"comment": "v2.3-50-g57a084d",
+			"path": "github.com/inconshreveable/log15/term",
+			"revision": "57a084d014d4150152b19e4e531399a7145d1540"
+		},
+		{
+			"checksumSHA1": "mZK+4q1Xr8z0AwkCAgO+7Rb8xk8=",
+			"comment": "v1.1-29-g77366a4",
+			"path": "github.com/julienschmidt/httprouter",
+			"revision": "77366a47451a56bb3ba682481eed85b64fea14e8"
+		},
+		{
+			"checksumSHA1": "Zgi7LCXXiFQYL84rwInvfJHEOQM=",
+			"path": "github.com/lonelycode/go-uuid/uuid",
+			"revision": "ed3ca8a15a931b141440a7e98e4f716eec255f7d"
+		},
+		{
+			"checksumSHA1": "rCffFCN6TpDAN3Jylyo8RFzhQ9E=",
+			"path": "github.com/mattn/go-colorable",
+			"revision": "9cbef7c35391cca05f15f8181dc0b18bc9736dbb"
+		},
+		{
+			"checksumSHA1": "NkbetqlpWBi3gP08JDneC+axTKw=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "56b76bdf51f7708750eac80fa38b952bb9f32639"
+		},
+		{
+			"checksumSHA1": "UwhLtKi/lHjArxgsqRe6iqSEu3I=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "0q9OJX4TFhjUaEkVopLyUpvvSQw=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/config",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "T1cZh3UWr4Hnx6fQYp+7KDNvxG4=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/codelocation",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "qvz6/+otRkWa1OHaPMKap9D5Ge4=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/containernode",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "882oWW4FC4Nrd8mrMptsDJSTDds=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/failer",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "x2XsPsAvu0o9GFkGNDex2yMUkxs=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/leafnodes",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "YYYKM1ETStuYBX9jBNV+t9gku/I=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/remote",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "TXRELVQyDglFbTEBSgWzr2kePq0=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/spec",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "4bevAplfVxvxbgQOLIc2elkiREo=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/specrunner",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "qHyV9V4XDctM1CYOplL703ZIqDg=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/suite",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "6sOxGhw1brknfjJd9h7MhpnxHMY=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/testingtproxy",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "dpgqwFYT7NWSOG0Ah+r6kgMhrBg=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/internal/writer",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "Ns/YVVNxy4JTzrzjxToWV10lwWc=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/reporters",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "w5w5vYFE+kazTCON6pbEGDhsx7U=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/reporters/stenographer",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "FGWjq6+D/zfVdOx13U3Bn/I25v0=",
+			"comment": "v1.2.0-52-g2c2e9bb",
+			"path": "github.com/onsi/ginkgo/types",
+			"revision": "2c2e9bb47b4e44067024f29339588cac8b34dd12"
+		},
+		{
+			"checksumSHA1": "pancewZW3HwGvpDwfH5Imrbadc4=",
+			"path": "golang.org/x/net/context",
+			"revision": "589fda73dd0faec3dc59e7d7dab5b069e3fce0f9"
+		},
+		{
+			"checksumSHA1": "zIGa5kv0cU8ezC+9XasJM3YnCF0=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "9eef40adf05b951699605195b829612bd7b69952"
+		}
+	],
+	"rootPath": "github.com/kidanekal/goapi"
+}
