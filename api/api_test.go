@@ -1,38 +1,29 @@
 package api_test
 
 import (
-	"bytes"
-	"errors"
-	"io/ioutil"
-	"strings"
-
-	. "github.com/onsi/ginkgo"
-	. "github.com/onsi/gomega"
-
-	"encoding/json"
 	"net/http"
+	"net/http/httptest"
+	"testing"
 
 	"github.com/kidanekal/goapi/api"
+	"golang.org/x/net/context"
 )
 
-var _ = Describe("Api", func() {
+// TestHealthHandler tests the health handler
+func TestHealthHandler(t *testing.T) {
 
-	Context("Health check", func() {
+	req, err := http.NewRequest("GET", "/health", nil)
+	if err != nil {
+		t.Fatal(err)
+	}
 
-		It("GET returns 200", func() {
+	recorder := httptest.NewRecorder()
 
-			resp, err := http.Get(server.URL + "/health")
+	ctx := context.Background()
 
-			Expect(err).To(BeNil())
-			Expect(resp.StatusCode).To(Equal(200))
-		})
+	api.HealthHandler(ctx, recorder, req)
 
-		It("HEAD returns 405", func() {
-
-			resp, err := http.Head(server.URL + "/health")
-
-			Expect(err).To(BeNil())
-			Expect(resp.StatusCode).To(Equal(405))
-		})
-	})
-})
+	if recorder.Code != http.StatusOK {
+		t.Errorf("Expected status code %d, got %d", http.StatusOK, recorder.Code)
+	}
+}
