@@ -1,4 +1,4 @@
-FROM golang:1.10
+FROM golang:1.22.1
 
 WORKDIR /go/src/github.com/kidanekal/goapi
 ADD ./ ./

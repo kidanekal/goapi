@@ -18,7 +18,7 @@ func NewRouter() *httprouter.Router {
 	//
 	// Health
 	//
-	createRoute(router.GET, constants.HealthPath, healthHandler, middleware.VersionHeader)
+	createRoute(router.GET, constants.HealthPath, HealthHandler, middleware.VersionHeader)
 
 	//
 	// Testing
@@ -46,7 +46,7 @@ func createRoute(method func(path string, handle httprouter.Handle),
 	method(path, routeHandle)
 }
 
-func healthHandler(ctx context.Context, w http.ResponseWriter, r *http.Request) {
+func HealthHandler(ctx context.Context, w http.ResponseWriter, r *http.Request) {
 	// 200 response is the default
 }
 

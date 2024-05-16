@@ -4,8 +4,9 @@
 
 ## Setup for local development
 
-1. install godep from here https://github.com/tools/godep
-2. install `make`
+1. Install `Go 1.22.1`.
+2. Install `make`.
+3. Clone this repository into your Go workspace.
 
 
 ## Run the app (non docker)

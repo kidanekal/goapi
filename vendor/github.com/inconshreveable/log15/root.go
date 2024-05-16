@@ -3,10 +3,11 @@ package log15
 import (
 	"os"
 
-	"github.com/inconshreveable/log15/term"
 	"github.com/mattn/go-colorable"
+	"golang.org/x/term"
 )
 
+// Predefined handlers
 var (
 	root          *logger
 	StdoutHandler = StreamHandler(os.Stdout, LogfmtFormat())
@@ -14,11 +15,11 @@ var (
 )
 
 func init() {
-	if term.IsTty(os.Stdout.Fd()) {
+	if term.IsTerminal(int(os.Stdout.Fd())) {
 		StdoutHandler = StreamHandler(colorable.NewColorableStdout(), TerminalFormat())
 	}
 
-	if term.IsTty(os.Stderr.Fd()) {
+	if term.IsTerminal(int(os.Stderr.Fd())) {
 		StderrHandler = StreamHandler(colorable.NewColorableStderr(), TerminalFormat())
 	}
 
