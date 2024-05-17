@@ -41,11 +41,27 @@ Content-Type: text/plain; charset=utf-8
 
 ## Local deployment
 
-1. Set a default value for testing
-   `export CI_COMMIT_SHA=$(git rev-parse --short HEAD)`
-2. build the docker image
-   `docker build -t goapi:$CI_COMMIT_SHA . `
-3. deploy using helm
-   `helm upgrade --install goapi-dev deployment -f ./deployment/values.yaml --set image.repository=goapi --set image.tag=CI_COMMIT_SHA`
-4. Use port-forward to test the api
-   `kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT`
+### Prerequisites
+* Ensure you have minikube installed
+* Ensure you have Docker installed on your machine
+1. start minikube
+   ```sh 
+   minikube start
+2. set-up minikube's Docker Daemon
+   * macOS and Linux
+     * configure your shell to use Minikube's Docker daemon by running the following command:
+     ```sh 
+     eval $(minikube -p minikube docker-env) 
+   * Windows
+     * In PowerShell, configure the environment by running:
+     ```sh
+     & minikube -p minikube docker-env | Invoke-Expression
+3. verify the docker environment
+   ```sh
+   docker info
+4. Use `make all` command to start the deployment 
+   ```sh
+   make all
+5. Forward the port using `kubectl`
+   ```sh
+   kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT

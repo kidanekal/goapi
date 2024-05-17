@@ -6,28 +6,39 @@ DEPLOYMENT_PATH := ./deployment
 VALUES_FILE := $(DEPLOYMENT_PATH)/values.yaml
 BINARY_PATH := ./bin/goapi
 
+# Default target
+.PHONY: all
+all: clean build docker_build deploy
+
+.PHONY: build
 build: prebuild
 	CGO_ENABLED=0 go build -v -a --installsuffix cgo -ldflags '-s' -o ./bin/goapi
 
+.PHONY: docker_run
 docker_run:
 	docker build -t goapi -f Dockerfile .
 	docker run --rm -p 4200:4200 goapi
 
+.PHONY: prebuild
 prebuild: generate fmt
 
-
+.PHONY: run
 run: build
 	./bin/goapi
 
+.PHONY: fmt
 fmt:
 	go fmt ./...
 
+.PHONY: generate
 generate:
 	go generate ./...
 
+.PHONY: clean
 clean:
 	- rm -fr goapi
 	- rm -fr ./bin/goapi
+
 
 builder:
 	go fmt ./...
