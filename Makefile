@@ -5,6 +5,7 @@ RELEASE_NAME := goapi-dev
 DEPLOYMENT_PATH := ./deployment
 VALUES_FILE := $(DEPLOYMENT_PATH)/values.yaml
 BINARY_PATH := ./bin/goapi
+SERVICEMONITOR_FILE := $(DEPLOYMENT_PATH)/servicemonitor-goapi.yaml
 
 # Default target
 .PHONY: all
@@ -54,6 +55,7 @@ docker_build: build
 deploy: docker_build
 	@echo "Deploying with Helm..."
 	helm upgrade --install $(RELEASE_NAME) $(DEPLOYMENT_PATH) -f $(VALUES_FILE) --set image.repository=$(IMAGE_NAME) --set image.tag=$(CI_COMMIT_SHA)
+	kubectl apply -f $(SERVICEMONITOR_FILE)
 	@echo "Deployment completed successfully."
 
 # Show help
