@@ -83,8 +83,8 @@ helm upgrade --install prometheus prometheus-community/kube-prometheus-stack --n
 ```
 ### Step 2: Apply the ServiceMonitor
 
-To make Prometheus start scraping metrics from your goapi application, you need to apply servicemonitor-goapi.yaml configuration.
+To make Prometheus start scraping metrics from your goapi application, you need to apply servicemonitor-goapi.yaml configuration. 
 
 ```sh
-kubectl apply -f deployment/servicemonitor-goapi.yaml
+kubectl apply -f deployment/monitoring/servicemonitor-goapi.yaml
 
