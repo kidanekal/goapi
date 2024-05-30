@@ -8,20 +8,10 @@ import (
 	"github.com/kidanekal/goapi/constants"
 	"github.com/kidanekal/goapi/logger"
 	"github.com/kidanekal/goapi/middleware"
-	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"golang.org/x/net/context"
 )
 
-var (
-	httpRequestsTotal = prometheus.NewCounterVec(
-		prometheus.CounterOpts{
-			Name: "http_requests_total",
-			Help: "Total number of HTTP requests",
-		},
-		[]string{"path", "method", "status"},
-	)
-)
 
 func NewRouter() *httprouter.Router {
 
