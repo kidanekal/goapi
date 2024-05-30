@@ -1,4 +1,4 @@
-package api
+package middleware
 
 import (
 	"context"
@@ -28,7 +28,7 @@ func TestPrometheusMiddleware(t *testing.T) {
 	w := httptest.NewRecorder()
 
 	// Wrap the next handler with the middleware
-	handler := prometheusMiddleware("/foo", next)
+	handler := PrometheusMiddleware("/foo", next)
 
 	// Call the handler
 	handler(context.Background(), w, req)

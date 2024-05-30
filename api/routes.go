@@ -23,21 +23,6 @@ var (
 	)
 )
 
-type responseWriter struct {
-	http.ResponseWriter
-	status int
-}
-
-func (rw *responseWriter) WriteHeader(status int) {
-	rw.status = status
-	rw.ResponseWriter.WriteHeader(status)
-}
-
-func init() {
-	// Register the metric with Prometheus
-	prometheus.MustRegister(httpRequestsTotal)
-}
-
 func NewRouter() *httprouter.Router {
 
 	router := httprouter.New()
@@ -73,21 +58,8 @@ func createRoute(method func(path string, handle httprouter.Handle),
 	log := logger.CLI("package", "api")
 
 	// // Wrap the handler with metrics middleware
-	routeHandle := middleware.Context(path, log, prometheusMiddleware(path, handler))
+	routeHandle := middleware.Context(path, log, middleware.PrometheusMiddleware(path, handler))
 	method(path, routeHandle)
-}
-
-func prometheusMiddleware(path string, next middleware.Handle) middleware.Handle {
-	return func(ctx context.Context, w http.ResponseWriter, r *http.Request) {
-
-		rw := &responseWriter{w, http.StatusOK}
-
-		next(ctx, rw, r)
-
-		status := rw.status
-
-		httpRequestsTotal.WithLabelValues(path, r.Method, http.StatusText(status)).Inc()
-	}
 }
 
 func HealthHandler(ctx context.Context, w http.ResponseWriter, r *http.Request) {
