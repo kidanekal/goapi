@@ -12,7 +12,6 @@ import (
 	"golang.org/x/net/context"
 )
 
-
 func NewRouter() *httprouter.Router {
 
 	router := httprouter.New()
