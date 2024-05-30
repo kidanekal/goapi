@@ -8,8 +8,10 @@ import (
 	"github.com/kidanekal/goapi/constants"
 	"github.com/kidanekal/goapi/logger"
 	"github.com/kidanekal/goapi/middleware"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"golang.org/x/net/context"
 )
+
 
 func NewRouter() *httprouter.Router {
 
@@ -24,6 +26,9 @@ func NewRouter() *httprouter.Router {
 	// Testing
 	//
 	router.HandlerFunc("POST", "/panic", PanicHandler)
+
+	// Metrics endpoint
+	router.Handler("GET", "/metrics", promhttp.Handler())
 
 	addProfiling(router)
 
@@ -42,7 +47,8 @@ func createRoute(method func(path string, handle httprouter.Handle),
 
 	log := logger.CLI("package", "api")
 
-	routeHandle := middleware.Context(path, log, handler)
+	// // Wrap the handler with metrics middleware
+	routeHandle := middleware.Context(path, log, middleware.PrometheusMiddleware(path, handler))
 	method(path, routeHandle)
 }
 

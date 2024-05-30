@@ -65,3 +65,26 @@ Content-Type: text/plain; charset=utf-8
 5. Forward the port using `kubectl`
    ```sh
    kubectl --namespace default port-forward $POD_NAME 8080:$CONTAINER_PORT
+   
+## Setting Up Monitoring for goapi
+
+### Prerequisites
+
+- Helm installed and initialized
+- Kubernetes cluster running
+- `goapi` application deployed
+
+### Step 1: Install Prometheus using Helm
+
+Run the following command to deploy Prometheus and set up monitoring in the `monitoring` namespace:
+
+```sh
+helm upgrade --install prometheus prometheus-community/kube-prometheus-stack --namespace monitoring --create-namespace
+```
+### Step 2: Apply the ServiceMonitor
+
+To make Prometheus start scraping metrics from your goapi application, you need to apply servicemonitor-goapi.yaml configuration.
+
+```sh
+kubectl apply -f deployment/servicemonitor-goapi.yaml
+
